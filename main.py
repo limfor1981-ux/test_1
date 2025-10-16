@@ -50,7 +50,6 @@ class Notepad:  # 클래스 생성
             defaultextension=".txt",
             filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
         )
-        file_path = filedialog.askopenfilename(defaultextension=".txt", filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")])
         if file_path:
             try:
                 with open(file_path, "r", encoding="utf-8") as file:
@@ -77,11 +76,9 @@ class Notepad:  # 클래스 생성
             defaultextension=".txt",
             filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
         )
-        file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")])
         if file_path:
             self.current_file_path = file_path
             self.save_file() # 저장 로직 재사용
-            self.save_file()
 
     def exit_app(self):
         self.root.quit()
